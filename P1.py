@@ -7,7 +7,12 @@
 # Por ejemplo, si a la función se le pasa la tupla (8,3), la función debe de retornar la tupla (2,4).
 # Esto es por que la integral de (8x3) es (2x4)
 # la función no debe de contemplar el caso 1/x
+from typing import Tuple
 
 
-def integra_termino(termino):
-    pass
+def integra_termino(termino: Tuple[float, float]) -> Tuple[float, float]:
+    a = termino[0]
+    n = termino[1]
+    ai = a/(n+1)
+    ni = n+1
+    return (ai, ni)

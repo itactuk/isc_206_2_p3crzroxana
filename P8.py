@@ -5,7 +5,17 @@
 # 	Ejemplo:
 # 	Entrada: “hola” es una palabra, “vas bien” es otra palabra
 # 	Resultado: [‘hola’,’vas bien’]
+from typing import List
 
 
-def extrae_comillas():
-    pass
+def extrae_comillas(txt: str) -> List[str]:
+    if txt.count('"') % 2 == 1:
+        return None
+    res = []
+    while '"' in txt:
+        ii = txt.find('"')
+        txt = txt[ii+1:]
+        ind_f = txt.find('"')
+        res.append(txt[:ind_f])
+        txt = txt[ind_f+1:]
+    return res

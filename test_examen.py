@@ -38,12 +38,12 @@ class P2Test(unittest.TestCase):
 class P3Test(unittest.TestCase):
     def test_a(self):
         polinomio = [(2, 2), (8, 4), (8.8, 3)]
-        resultado = "2X2+8x4+8.8x3"
+        resultado = "2x2+8x4+8.8x3"
         self.assertEqual(resultado, P3.conv_str(polinomio).replace(" ", ""))
 
     def test_b(self):
         polinomio = [(3, 3)]
-        resultado = "3X3"
+        resultado = "3x3"
         self.assertEqual(resultado, P3.conv_str(polinomio).replace(" ", ""))
 
 
@@ -179,5 +179,5 @@ class P8Test(unittest.TestCase):
 
     def test_otro(self):
         entrada = 'Inicio "este" y  "aquel" ademas "ese" y "asi"'
-        resultado= ["hola", "vas bien", "aquel", "ese", "asi"]
+        resultado= ["este", "aquel", "ese", "asi"]
         self.assertEqual(resultado, P8.extrae_comillas(entrada))

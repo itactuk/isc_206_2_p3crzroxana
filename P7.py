@@ -7,7 +7,15 @@
 # Ejemplo:
 # Entrada: [“hola”, “Hola”, “BYE”]
 # Salida: {“hola”: 2, “bye”: 1}
+from typing import List, Dict
 
 
-def cuenta_palabras():
-    pass
+def cuenta_palabras(lista_palabras: List[str]) -> Dict[str, int]:
+    res = {}
+    for palabra in lista_palabras:
+        palabra = palabra.lower()
+        if palabra not in res:
+            res[palabra] = 0
+        res[palabra] += 1
+    return res
+
